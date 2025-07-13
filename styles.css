@@ -567,9 +567,9 @@ button, .clear-btn, .export-btn, .btn-edit, .btn-delete {
 
 .budget-btn-row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10px;
-    margin-bottom: 18px;
+    margin: 15px 0 18px 0;
 }
 
 #budget {
