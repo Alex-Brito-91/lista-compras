@@ -94,4 +94,3 @@ Este projeto é de código aberto e pode ser usado livremente para fins pessoais
 
 ---
 
-**Desenvolvido com ❤️ para facilitar suas compras!** 
