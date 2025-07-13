@@ -613,3 +613,16 @@ button, .clear-btn, .export-btn, .btn-edit, .btn-delete {
 .budget-btn-row button:not(.clear-budget-btn):hover {
     background: #38a169;
 } 
+
+.add-product-section form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: end;
+    justify-content: center;
+}
+
+.add-product-section form button[type="submit"] {
+    display: block;
+    margin: 20px auto 0 auto;
+} 
