@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/shopping-basket.png" alt="Carrinho de Compras" style="height: 60px; vertical-align: middle; margin-right: 10px;">
+            <h1 style="display: inline-block; vertical-align: middle;">Lista de Compras</h1>
+        </header>
+
+        <main>
+            <!-- Seção de orçamento -->
+            <section class="budget-section">
+                <h2>
+                    <img src="img/orcamento.svg" alt="Saldo" class="icon-h2" style="height: 26px; vertical-align: middle; margin-right: 8px;">
+                    Orçamento
+                </h2>
+                <div class="budget-input-row">
+                    <label for="budget">Valor disponível para compras:</label>
+                    <input type="text" id="budget" placeholder="R$ 0,00">
+                </div>
+                <div class="budget-btn-row">
+                    <button onclick="setBudget()">Definir Saldo</button>
+                    <button type="button" onclick="clearBudget()" class="clear-budget-btn">Limpar Saldo</button>
+                </div>
+                <div class="budget-info">
+                    <div class="budget-item orcamento">
+                        <span>Saldo:</span>
+                        <span id="budget-display">R$ 0,00</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Total gasto:</span>
+                        <span id="total-spent">R$ 0,00</span>
+                    </div>
+                    <div class="budget-item saldo-restante">
+                        <span>Saldo restante:</span>
+                        <span id="remaining-budget">R$ 0,00</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de adicionar produtos -->
+            <section class="add-product-section">
+                <h2>
+                    <img src="img/produto.svg" alt="Adicionar Produto" class="icon-h2" style="height: 26px; vertical-align: middle; margin-right: 8px;">
+                    Adicionar Produto
+                </h2>
+                <form id="product-form" onsubmit="addProduct(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-name">Produto:</label>
+                            <input type="text" id="product-name" placeholder="Nome do produto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-quantity">Quantidade:</label>
+                            <input type="number" id="product-quantity" placeholder="1" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Preço unitário:</label>
+                            <input type="text" id="product-price" placeholder="R$ 0,00" required>
+                        </div>
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align: middle; margin-right: 6px;"><circle cx="10" cy="10" r="10" fill="#48bb78"/><path d="M10 5V15" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M5 10H15" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Seção da lista de produtos -->
+            <section class="products-section">
+                <h2>
+                    <img src="img/lista.svg" alt="Lista de Produtos" class="icon-h2" style="height: 26px; vertical-align: middle; margin-right: 8px;">
+                    Lista de Produtos
+                </h2>
+                <div class="products-header">
+                    <span>Produto</span>
+                    <span>Qtd</span>
+                    <span>Preço Unit.</span>
+                    <span>Total</span>
+                    <span>Ações</span>
+                </div>
+                <div id="products-list" class="products-list">
+                    <!-- Produtos serão adicionados aqui dinamicamente -->
+                </div>
+                <div class="empty-state" id="empty-state">
+                    <p>Nenhum produto adicionado ainda.</p>
+                    <p>Adicione produtos usando o formulário acima!</p>
+                </div>
+            </section>
+
+            <!-- Seção de resumo -->
+            <section class="summary-section">
+                <h2>
+                    <img src="img/resumo.svg" alt="Resumo" class="icon-h2" style="height: 26px; vertical-align: middle; margin-right: 8px;">
+                    Resumo
+                </h2>
+                <div class="summary-info">
+                    <div class="summary-item">
+                        <span>Total de itens:</span>
+                        <span id="total-items">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Valor total:</span>
+                        <span id="grand-total">R$ 0,00</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <button onclick="clearList()" class="clear-btn">Limpar Lista</button>
+            <button onclick="exportList()" class="export-btn">Exportar Lista</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
